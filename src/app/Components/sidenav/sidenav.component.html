@@ -1,0 +1,27 @@
+<mat-nav-list class="">
+    <mat-list-item routerLink="home" routerLinkActive="active__"  *ngIf="_authService.token">
+       <a matListItemTitle >Home </a>
+       <button mat-icon-button  matListItemMeta>
+          <mat-icon  >home</mat-icon>
+       </button>
+     
+    </mat-list-item>
+    <mat-list-item  routerLink="login" routerLinkActive="active__"*ngIf="!_authService.token">
+       <a matListItemTitle >Log In</a>
+       <button mat-icon-button  matListItemMeta>
+          <mat-icon>login</mat-icon>
+       </button>
+    </mat-list-item>
+    <mat-list-item  routerLink="register" routerLinkActive="active__"*ngIf="!_authService.token">
+       <a matListItemTitle >register</a>
+       <button mat-icon-button  matListItemMeta>
+          <mat-icon>login</mat-icon>
+       </button>
+    </mat-list-item>
+    <mat-list-item  (click)="_authService.signout()"*ngIf="_authService.token">
+       <a matListItemTitle >sign out</a>
+       <button mat-icon-button  matListItemMeta>
+          <mat-icon>logout</mat-icon>
+       </button>
+    </mat-list-item>
+  </mat-nav-list>

@@ -1,0 +1,13 @@
+.sideNav{
+    width:200px;
+    
+}
+
+.mat-drawer-container{
+    background-color: rgb(228, 233, 235);
+    color: black!important;
+}
+.mat-drawer{
+   color: black!important;
+  
+}

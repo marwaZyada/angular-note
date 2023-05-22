@@ -1,0 +1,27 @@
+<form class="example-form" [formGroup]="noteGroup" class="p-3 my-5" (ngSubmit)="noteSubmit(noteGroup)">
+    <h2 class="text-white text-capitalize">{{heading}}</h2>
+    <mat-form-field class="example-full-width">
+      <mat-label>Title</mat-label>
+      <input type="text" matInput formControlName="title"  placeholder="title" class="">
+      
+      <mat-error *ngIf="noteGroup.get('title')?.hasError('minlength') && !noteGroup.get('title')?.hasError('required')">
+        Please min length is 10 letters
+      </mat-error>
+      <mat-error *ngIf="noteGroup.get('title')?.hasError('required')">
+        Title is <strong>required</strong>
+      </mat-error>
+    </mat-form-field>
+    <mat-form-field class="example-full-width">
+      <mat-label>Desc</mat-label>
+      <input type="text" matInput formControlName="desc"  placeholder="desc">
+      
+      <mat-error *ngIf="noteGroup.get('desc')?.hasError('minlength') && !noteGroup.get('desc')?.hasError('required')">
+        Please min length is 10 letters
+      </mat-error>
+      <mat-error *ngIf="noteGroup.get('desc')?.hasError('required')">
+        desc is <strong>required</strong>
+      </mat-error>
+    </mat-form-field>
+    <button type="submit" mat-raised-button color="primary" class="d-block ms-auto">Send</button>
+  </form>
+  

@@ -1,0 +1,11 @@
+<mat-toolbar color="" class="bg-primary">
+    <mat-toolbar-row>
+      <span><mat-icon class="v-align">event_note</mat-icon>NoteApp</span>
+      <!-- <span class="example-spacer"></span> -->
+      <button mat-icon-button class="example-icon ms-auto" aria-label="Example icon-button with menu icon" (click)="sideNav.toggle()">
+        <mat-icon >menu</mat-icon>
+      </button>
+    </mat-toolbar-row>
+</mat-toolbar>
+<mat-progress-bar mode="indeterminate" *ngIf="_autService.isloading |async"></mat-progress-bar>
+

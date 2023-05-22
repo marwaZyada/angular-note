@@ -1,0 +1,30 @@
+
+<form class="example-form" [formGroup]="loginForm" class="w-75 mx-auto py-4" (ngSubmit)="login(loginForm)">
+    <h2 mat-headline-2>Log In Form</h2>
+    <mat-form-field class="w-100">
+      <mat-label>Email</mat-label>
+      <input type="email" matInput formControlName="email"  placeholder="Ex. pat@example.com">
+      <button mat-icon-button matIconSuffix>
+        <mat-icon>email</mat-icon>
+      </button>
+      <mat-error *ngIf="loginForm.get('email')?.hasError('email') && !loginForm.get('email')?.hasError('required')">
+        Please enter a valid email address
+      </mat-error>
+      <mat-error *ngIf="loginForm.get('email')?.hasError('required')">
+        Email is <strong>required</strong>
+      </mat-error>
+    </mat-form-field>
+    <mat-form-field class="w-100">
+      <mat-label>password</mat-label>
+      <input type="password" matInput formControlName="password"  placeholder="password">
+      <button mat-icon-button matIconSuffix>
+        <mat-icon>password</mat-icon>
+      </button>
+     
+      <mat-error *ngIf="loginForm.get('password')?.hasError('required')">
+        Email is <strong>required</strong>
+      </mat-error>
+    </mat-form-field>
+    <button mat-raised-button color="accent" class="d-block w-100">Log In</button>
+  </form>
+  
